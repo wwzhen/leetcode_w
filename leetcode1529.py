@@ -6,20 +6,11 @@ class Solution(object):
         :type target: str
         :rtype: int
         """
-        # target_list = list(target)
-        # init_list = [0] * len(target_list)
-        # count = 0
-        # for i in range(len(target_list)):
-        #     if int(target_list[i]) != init_list[i]:
-        #         count += 1
-        #         init_list = self.flip(init_list)
-        # return count
-
-
-    def flip(self, l):
-        for i in range(len(l)):
-            l[i] = 0 if l[i] else 1
-        return l
+        count = 0 if int(target[0]) == 0 else 1
+        for i in range(len(target) - 1):
+            if target[i] != target[i + 1]:
+                count += 1
+        return count
 
 
 if __name__ == '__main__':
